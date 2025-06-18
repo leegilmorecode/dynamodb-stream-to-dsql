@@ -1,0 +1,63 @@
+{
+  "info": {
+    "_postman_id": "a9a04711-2e39-4218-8595-6e87e04b52d7",
+    "name": "Sweet Shop Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "752706"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"5f5ddae2-8a91-4afb-9485-a77cbb96f4cd\",\n  \"contactEmail\": \"alice@example.com\",\n  \"contactPhone\": \"+447911123456\",\n  \"deliveryAddress\": {\n    \"street\": \"123 Candy Lane\",\n    \"city\": \"Sweetville\",\n    \"postcode\": \"SW1A 1AA\",\n    \"country\": \"UK\"\n  },\n  \"orderItems\": [\n    {\n      \"sweetName\": \"Strawberry Bonbons\",\n      \"quantity\": 3,\n      \"notes\": \"Extra sugary if possible\",\n     \"sku\": \"CHOC-ORANGE\"\n    },\n    {\n      \"sweetName\": \"Fizzy Cola Bottles\",\n      \"quantity\": 2,\n      \"sku\": \"CHOC-PREMIUM\"\n    }\n  ],\n  \"deliveryInstructions\": \"Leave at the front porch if nobody answers.\",\n  \"paymentMethod\": \"credit_card\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{url}}/api/v1/orders/",
+          "protocol": "https",
+          "host": ["{{url}}"],
+          "path": ["api", "v1", "orders", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Premium Chocolate Bar\",\n  \"description\": \"Exquisite dark chocolate bar with 70% cocoa content and a hint of sea salt\",\n  \"price\": 4.99,\n  \"category\": \"chocolate\",\n  \"stockQuantity\": 50,\n  \"sku\": \"CHOC-PREMIUM\",\n  \"tags\": [\n    \"chocolate\",\n    \"dark chocolate\",\n    \"premium\",\n    \"sea salt\"\n  ],\n  \"imageUrl\": \"https://example.com/images/premium-chocolate-bar.jpg\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{url}}/api/v1/products/",
+          "protocol": "https",
+          "host": ["{{url}}"],
+          "path": ["api", "v1", "products", ""]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "your-test-id.execute-api.your-region.amazonaws.com",
+      "type": "default"
+    }
+  ]
+}

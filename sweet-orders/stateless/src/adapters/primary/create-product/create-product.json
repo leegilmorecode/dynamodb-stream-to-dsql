@@ -1,0 +1,15 @@
+{
+  "name": "Premium Chocolate Bar",
+  "description": "Exquisite dark chocolate bar with 70% cocoa content and a hint of sea salt",
+  "price": 4.99,
+  "category": "chocolate",
+  "stockQuantity": 50,
+  "sku": "CHOC-PREMIUM",
+  "tags": [
+    "chocolate",
+    "dark chocolate",
+    "premium",
+    "sea salt"
+  ],
+  "imageUrl": "https://example.com/images/premium-chocolate-bar.jpg"
+}

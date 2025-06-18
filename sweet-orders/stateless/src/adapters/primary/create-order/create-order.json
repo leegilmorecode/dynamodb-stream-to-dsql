@@ -1,0 +1,27 @@
+{
+  "userId": "5f5ddae2-8a91-4afb-9485-a77cbb96f4cd",
+  "contactEmail": "alice@example.com",
+  "contactPhone": "+447911123456",
+  "customerName": "Alice Smith",
+  "deliveryAddress": {
+    "street": "123 Candy Lane",
+    "city": "Sweetville",
+    "postcode": "SW1A 1AA",
+    "country": "UK"
+  },
+  "orderItems": [
+    {
+      "sweetName": "Strawberry Bonbons",
+      "quantity": 3,
+      "notes": "Extra sugary if possible",
+      "sku": "CHOC-PREMIUM"
+    },
+    {
+      "sweetName": "Fizzy Cola Bottles",
+      "quantity": 2,
+      "sku": "CHOC-ORANGE"
+    }
+  ],
+  "deliveryInstructions": "Leave at the front porch if nobody answers.",
+  "paymentMethod": "credit_card"
+}

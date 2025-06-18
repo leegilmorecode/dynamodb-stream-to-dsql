@@ -1,0 +1,180 @@
+{
+  "info": {
+    "_postman_id": "a9a04711-2e39-4218-8595-6e87e04b52d7",
+    "name": "Sweet Shop Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "752706"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"5f5ddae2-8a91-4afb-9485-a77cbb96f4cd\",\n  \"contactEmail\": \"lee.gilmore@example.com\",\n  \"customerName\": \"Alice Smith\",\n  \"contactPhone\": \"+447911123456\",\n  \"deliveryAddress\": {\n    \"street\": \"123 Candy Lane\",\n    \"city\": \"Sweetville\",\n    \"postcode\": \"SW1A 1AA\",\n    \"country\": \"UK\"\n  },\n  \"orderItems\": [\n    {\n      \"sweetName\": \"Strawberry Bonbons\",\n      \"quantity\": 3,\n      \"notes\": \"Extra sugary if possible\",\n     \"sku\": \"CHOC-ORANGE\"\n    },\n    {\n      \"sweetName\": \"Fizzy Cola Bottles\",\n      \"quantity\": 2,\n      \"sku\": \"CHOC-PREMIUM\"\n    }\n  ],\n  \"deliveryInstructions\": \"Leave at the front porch if nobody answers.\",\n  \"paymentMethod\": \"credit_card\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{url}}/api/v1/orders/",
+          "protocol": "https",
+          "host": ["{{url}}"],
+          "path": ["api", "v1", "orders", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Order",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"PROCESSING\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{url}}/api/v1/orders/1111",
+          "protocol": "https",
+          "host": ["{{url}}"],
+          "path": ["api", "v1", "orders", "1111"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Premium Chocolate Bar\",\n  \"description\": \"Exquisite dark chocolate bar with 70% cocoa content and a hint of sea salt\",\n  \"price\": 4.99,\n  \"category\": \"chocolate\",\n  \"stockQuantity\": 50,\n  \"sku\": \"CHOC-PREMIUM\",\n  \"tags\": [\n    \"chocolate\",\n    \"dark chocolate\",\n    \"premium\",\n    \"sea salt\"\n  ],\n  \"imageUrl\": \"https://example.com/images/premium-chocolate-bar.jpg\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{url}}/api/v1/products/",
+          "protocol": "https",
+          "host": ["{{url}}"],
+          "path": ["api", "v1", "products", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Orders (Management API)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{managementUri}}/api/v1/orders?status=PENDING",
+          "protocol": "https",
+          "host": ["{{managementUri}}"],
+          "path": ["api", "v1", "orders"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "disabled": true
+            },
+            {
+              "key": "limit",
+              "value": "1",
+              "disabled": true
+            },
+            {
+              "key": "status",
+              "value": "PENDING"
+            },
+            {
+              "key": "startDate",
+              "value": "2025-07-24T05:10:14.805Z",
+              "disabled": true
+            },
+            {
+              "key": "endDate",
+              "value": "2025-07-25T05:10:14.805Z",
+              "disabled": true
+            },
+            {
+              "key": "customerName",
+              "value": "alice",
+              "disabled": true
+            },
+            {
+              "key": "contactEmail",
+              "value": "alice",
+              "disabled": true
+            },
+            {
+              "key": "paymentMethod",
+              "value": "credit_card",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order Events (Management API)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{managementUri}}/api/v1/orders/b81fa4ef-557a-46dc-ab50-4b3e79fa5453/events?page=1&limit=10&eventType=ORDER_PLACED",
+          "protocol": "https",
+          "host": ["{{managementUri}}"],
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "b81fa4ef-557a-46dc-ab50-4b3e79fa5453",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "eventType",
+              "value": "ORDER_PLACED"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "your-id.execute-api.eu-west-2.amazonaws.com",
+      "type": "default"
+    },
+    {
+      "key": "managementUri",
+      "value": "your-id.execute-api.eu-west-2.amazonaws.com",
+      "type": "default"
+    }
+  ]
+}
